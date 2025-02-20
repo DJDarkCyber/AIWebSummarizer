@@ -1,0 +1,1 @@
+from core.summarize.summarizer.ai_summarizer.claude_35_haiku import Claude35Haiku

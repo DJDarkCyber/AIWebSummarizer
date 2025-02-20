@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+#root {
+    background-color: #FFF8EA;
+}
+
+html {
+    background-color: #FFF8EA;
+}
+
+/* Custom Toastify Theme */
+.Toastify__toast {
+    background-color: #594545; /* Custom background color */
+    color: #ffffff; /* Custom text color */
+}
+
+/* Custom Progress Bar Color */
+.Toastify__progress-bar {
+    background-color: #9E7676; /* Custom progress bar color */
+}
+
+/* Custom Close Button Color */
+.Toastify__close-button {
+    color: #ffffff; /* Custom close button color */
+}
+
+/* Custom Hover Effect */
+.Toastify__toast:hover {
+    background-color: #4a3939; /* Darker shade for hover */
+}
