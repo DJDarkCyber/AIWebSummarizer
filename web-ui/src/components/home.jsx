@@ -4,7 +4,9 @@ import { Container, Form, Button, Spinner, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { toast, ToastContainer, Bounce } from 'react-toastify';
-import DOMPurify from 'dompurify'; // Import DOMPurify
+
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm'
 
 import Header from "./header";
 
@@ -39,8 +41,6 @@ const Home = () => {
             setIsLoading(false);
         }
     };
-
-    const sanitizedHTML = DOMPurify.sanitize(summarizedData);
 
     
     return (
@@ -90,10 +90,11 @@ const Home = () => {
                     <Card className='border-0'>
                         <Card.Body className='bg-[#9e767698]'>
                         <Card.Title className='d-flex justify-content-center'>Summarized Content</Card.Title>
-                        <div
-                dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
-                className="summarized-content"
-              />
+                        <div className="markdown-content">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {summarizedData}
+                            </ReactMarkdown>
+                        </div>
                         </Card.Body>
                     </Card>
                     </Container>
